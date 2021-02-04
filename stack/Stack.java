@@ -7,13 +7,26 @@ public class Stack {
     private int top = 0;
 
     public void push(int data) {
-        stack[top++] = data;
+
+        try {
+            stack[top++] = data;
+        } catch (Exception e) {
+            System.out.println("Stack Overflow!");
+        }
+
     }
 
     public int pop() {
-        int data = stack[--top];
-        stack[top] = 0;
+
+        int data = 0;
+        try {
+            data = stack[--top];
+            stack[top] = 0;
+        } catch (Exception e) {
+            System.out.println("Stack Underflow!");
+        }
         return data;
+
     }
 
     public int peek() {
@@ -21,10 +34,14 @@ public class Stack {
     }
 
     public void show() {
+
+        if (isEmpty()) System.out.println("Stack has no elements");
+
         for (int i = top - 1; i >= 0; i--) {
             System.out.println("  " + stack[i] + "  ");
             System.out.println("|____| " + i + "\n");
         }
+
     }
 
     public int size() {
