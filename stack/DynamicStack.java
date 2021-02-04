@@ -25,13 +25,6 @@ public class DynamicStack {
 
     }
 
-    private void shrink() {
-        int[] tempStack = new int[capacity /= 2];
-        copyArrayData(tempStack);
-        stack = tempStack;
-        tempStack = null;
-    }
-
     public int peek() {
         return stack[top - 1];
     }
@@ -55,18 +48,25 @@ public class DynamicStack {
 
     }
 
-    private void extend() {
-        int[] tempStack = new int[capacity *= 2];
-        copyArrayData(tempStack);
-        tempStack = null;
-    }
-
     private void copyArrayData(int[] temp) {
         for (int i = 0; i < size(); i++) {
             temp[i] = stack[i];
         }
         stack = temp;
         temp = null;
+    }
+
+    private void extend() {
+        int[] tempStack = new int[capacity *= 2];
+        copyArrayData(tempStack);
+        tempStack = null;
+    }
+
+    private void shrink() {
+        int[] tempStack = new int[capacity /= 2];
+        copyArrayData(tempStack);
+        stack = tempStack;
+        tempStack = null;
     }
 
 }
