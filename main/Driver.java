@@ -2,6 +2,7 @@ package main;
 
 import arrays.Array;
 import linkedlist.LinkedList;
+import queue.Queue;
 import stack.DynamicStack;
 import stack.Stack;
 
@@ -51,39 +52,67 @@ public class Driver {
 //        stack.show();
 
         // Stack
-        DynamicStack dStack = new DynamicStack();
-        dStack.push(10);
-        dStack.show();
-        System.out.println("---------");
-        dStack.push(20);
-        dStack.show();
-        System.out.println("---------");
-        dStack.push(30);
-        dStack.show();
-        System.out.println("---------");
-        dStack.push(40);
-        dStack.show();
-        System.out.println("---------");
-        dStack.push(55);
-        dStack.show();
-        System.out.println("---------");
-        System.out.println("Stack size: " + dStack.size());
-        System.out.println("Stack is empty: " + dStack.isEmpty());
-        System.out.println("Peek element: " + dStack.peek());
-    
-        System.out.println("---------");
-    
-        System.out.println("Popped element: " + dStack.pop());
-        dStack.show();
-        System.out.println("Popped element: " + dStack.pop());
-        dStack.show();
-        System.out.println("Popped element: " + dStack.pop());
-        dStack.show();
-        System.out.println("Popped element: " + dStack.pop());
-        dStack.show();
-        System.out.println("Stack size: " + dStack.size());
-        System.out.println("Stack is empty: " + dStack.isEmpty());
-        System.out.println("Peek element: " + dStack.peek());
+//        DynamicStack dStack = new DynamicStack();
+//        dStack.push(10);
+//        dStack.show();
+//        System.out.println("---------");
+//        dStack.push(20);
+//        dStack.show();
+//        System.out.println("---------");
+//        dStack.push(30);
+//        dStack.show();
+//        System.out.println("---------");
+//        dStack.push(40);
+//        dStack.show();
+//        System.out.println("---------");
+//        dStack.push(55);
+//        dStack.show();
+//        System.out.println("---------");
+//        System.out.println("Stack size: " + dStack.size());
+//        System.out.println("Stack is empty: " + dStack.isEmpty());
+//        System.out.println("Peek element: " + dStack.peek());
+//    
+//        System.out.println("---------");
+//    
+//        System.out.println("Popped element: " + dStack.pop());
+//        dStack.show();
+//        System.out.println("Popped element: " + dStack.pop());
+//        dStack.show();
+//        System.out.println("Popped element: " + dStack.pop());
+//        dStack.show();
+//        System.out.println("Popped element: " + dStack.pop());
+//        dStack.show();
+//        System.out.println("Stack size: " + dStack.size());
+//        System.out.println("Stack is empty: " + dStack.isEmpty());
+//        System.out.println("Peek element: " + dStack.peek());
+
+        // Queue
+        Queue queue = new Queue(5);
+        queue.enQueue(5);
+        queue.show();
+        queue.enQueue(10);
+        queue.show();
+        queue.enQueue(15);
+        queue.show();
+        queue.enQueue(20);
+        queue.show();
+        queue.enQueue(25);
+        queue.show();
+        queue.enQueue(30);
+        queue.deQueue();
+        queue.show();
+        queue.deQueue();
+        queue.show();
+        queue.deQueue();
+        queue.show();
+        queue.enQueue(35);
+        queue.show();
+        queue.enQueue(40);
+        queue.show();
+        queue.enQueue(45);
+        queue.show();
+        queue.enQueue(50);
+        System.out.println(queue.getSize());
 
     }
 
